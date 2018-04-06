@@ -1,0 +1,12 @@
+# flamescope-build
+
+This is a containerized version of flamescope.
+
+You can pull down your perfomance samples locally and mount a volume to the container to visualize.
+
+docker run \
+  --rm \
+  -e "FLAMESCOPE_STACK_DIR=samples" \
+  -p 5000:5000 \
+  -v `pwd`/samples/:/usr/src/app/samples \
+  taion809/flamescope
